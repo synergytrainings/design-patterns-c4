@@ -6,7 +6,7 @@ import com.company.model.LookupField;
 import com.company.visitor.FieldVisitor;
 
 /**
- * Created by arpine on 11/4/17.
+ * @author arpine on 11/4/17.
  */
 public class FieldLoadVisitorImpl
 		implements FieldVisitor {
@@ -21,13 +21,11 @@ public class FieldLoadVisitorImpl
 	public void visit(LookupField field) {
 		System.out
 				.println(String.format("Lookup field is loaded with %s lookupCategoryId", field.getLookupCategoryId()));
-
 	}
 
 	@Override
 	public void visit(ExpressionField field) {
 		System.out.println(String.format("Expression field is loaded with %s expression", field.getExpression()));
-
 	}
 
 }

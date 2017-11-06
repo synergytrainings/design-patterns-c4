@@ -19,12 +19,12 @@ public class VisitorImpl implements Visitor {
     @Override
     public int visit(Notebook notebook) {
         int cost = 0;
-        if (computer.getPrice() > 400) {
-            cost = (int) (computer.getPrice() * 0.9);
+        if (notebook.getPrice() > 400) {
+            cost = (int) (notebook.getPrice() * 0.9);
         } else {
-            cost = computer.getPrice();
+            cost = notebook.getPrice();
         }
-        System.out.println("Cost of " + computer.getName() + " is " + cost);
+        System.out.println("Cost of " + notebook.getName() + " is " + cost);
         return cost;
     }
 }

@@ -22,4 +22,5 @@ public class BaseObjectImpl
 	public String getName() {
 		return name;
 	}
+
 }

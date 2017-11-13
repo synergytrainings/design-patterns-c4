@@ -8,7 +8,7 @@ import com.company.visitor.impl.FieldLoadVisitorImpl;
 import com.company.visitor.impl.FieldSaveVisitorImpl;
 
 /**
- * Created by arpine on 11/6/17.
+ * @author arpine on 11/6/17.
  */
 public class FieldContainer {
 	private List<Visitable> fields = new ArrayList<>();

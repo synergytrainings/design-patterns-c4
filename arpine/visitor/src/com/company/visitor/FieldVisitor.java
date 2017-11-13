@@ -5,7 +5,7 @@ import com.company.model.ExpressionField;
 import com.company.model.LookupField;
 
 /**
- * Created by arpine on 11/4/17.
+ * @author arpine on 11/4/17.
  */
 public interface FieldVisitor {
 	void visit(DateField field);

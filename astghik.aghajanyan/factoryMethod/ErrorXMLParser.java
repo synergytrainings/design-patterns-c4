@@ -1,0 +1,13 @@
+package factoryMethod;
+
+/**
+ * Created by astghik.aghajanyan on 11/13/2017.
+ */
+public class ErrorXMLParser  implements XMLParser{
+
+    @Override
+    public String parse() {
+        System.out.println("Parsing error XML...");
+        return "Error XML Message";
+    }
+}

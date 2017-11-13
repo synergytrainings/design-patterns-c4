@@ -1,5 +1,7 @@
 package beans;
 
+import calculator.Calculator;
+
 import java.math.BigDecimal;
 import java.math.MathContext;
 
@@ -7,7 +9,7 @@ import java.math.MathContext;
  * @author Tigran.Mkrtchyan
  * @since 11/13/2017.
  */
-public class LTD extends Company {
+public class LTD extends Company implements Calculator {
     public LTD(BigDecimal income, BigDecimal expences, Double profitTaxes, Double incomeTaxes) {
         super(income, expences, profitTaxes, incomeTaxes);
     }

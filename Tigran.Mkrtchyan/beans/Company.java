@@ -19,6 +19,4 @@ public abstract class Company {
         this.profitTaxes = profitTaxes;
         this.incomeTaxes = incomeTaxes;
     }
-
-    public abstract BigDecimal calculateProfit();
 }

@@ -1,5 +1,7 @@
 package beans;
 
+import calculator.Calculator;
+
 import java.math.BigDecimal;
 import java.math.MathContext;
 
@@ -7,7 +9,7 @@ import java.math.MathContext;
  * @author Tigran.Mkrtchyan
  * @since 11/13/2017.
  */
-public class OJSC extends Company {
+public class OJSC extends Company implements Calculator {
 
     public OJSC(BigDecimal income, BigDecimal expences, Double profitTaxes, Double incomeTaxes) {
         super(income, expences, profitTaxes, incomeTaxes);

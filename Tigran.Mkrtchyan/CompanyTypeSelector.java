@@ -2,6 +2,7 @@ import beans.Company;
 import beans.IndividualEntrepreneur;
 import beans.LTD;
 import beans.OJSC;
+import calculator.Calculator;
 
 import java.math.BigDecimal;
 
@@ -11,7 +12,7 @@ import java.math.BigDecimal;
  */
 public class CompanyTypeSelector {
 
-    public Company getCompany(CompanyType type, BigDecimal income, BigDecimal expences, double profitTaxes, double incomeTaxes){
+    public Calculator getCompany(CompanyType type, BigDecimal income, BigDecimal expences, double profitTaxes, double incomeTaxes){
         switch (type){
             case LTD: return new LTD(income, expences, profitTaxes, incomeTaxes);
             case OJSC: return new OJSC(income, expences, profitTaxes, incomeTaxes);

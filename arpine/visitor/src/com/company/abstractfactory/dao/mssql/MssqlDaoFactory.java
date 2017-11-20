@@ -1,6 +1,5 @@
 package com.company.abstractfactory.dao.mssql;
 
-
 import com.company.abstractfactory.dao.DaoFactory;
 import com.company.abstractfactory.dao.RoleDao;
 import com.company.abstractfactory.dao.UserDao;
@@ -10,7 +9,9 @@ import com.company.abstractfactory.dao.UserDao;
  */
 public class MssqlDaoFactory
 		implements DaoFactory {
-	MssqlDbConnection dbConnection;
+	private MssqlDbConnection dbConnection;
+	private UserDao userDao;
+	private RoleDao roleDao;
 
 	public MssqlDaoFactory() {
 		dbConnection = new MssqlDbConnection();
@@ -18,12 +19,18 @@ public class MssqlDaoFactory
 
 	@Override
 	public UserDao createUserDao() {
-		return new MssqlUserDao(dbConnection);
+		if (this.userDao == null) {
+			userDao = new MssqlUserDao(dbConnection);
+		}
+		return this.userDao;
 	}
 
 	@Override
 	public RoleDao createRoleDao() {
-		return new MssqlRoleDao(dbConnection);
+		if (this.roleDao == null) {
+			roleDao = new MssqlRoleDao(dbConnection);
+		}
+		return roleDao;
 	}
 
 }

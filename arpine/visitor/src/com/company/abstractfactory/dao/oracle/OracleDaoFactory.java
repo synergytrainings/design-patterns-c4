@@ -1,6 +1,5 @@
 package com.company.abstractfactory.dao.oracle;
 
-
 import com.company.abstractfactory.dao.DaoFactory;
 import com.company.abstractfactory.dao.RoleDao;
 import com.company.abstractfactory.dao.UserDao;
@@ -10,7 +9,9 @@ import com.company.abstractfactory.dao.UserDao;
  */
 public class OracleDaoFactory
 		implements DaoFactory {
-	OracleDbConnection dbConnection;
+	private OracleDbConnection dbConnection;
+	private UserDao userDao;
+	private RoleDao roleDao;
 
 	public OracleDaoFactory() {
 		dbConnection = new OracleDbConnection();
@@ -18,12 +19,18 @@ public class OracleDaoFactory
 
 	@Override
 	public UserDao createUserDao() {
-		return new OracleUserDao(dbConnection);
+		if (this.userDao == null) {
+			this.userDao = new OracleUserDao(dbConnection);
+		}
+		return userDao;
 	}
 
 	@Override
 	public RoleDao createRoleDao() {
-		return new OracleRoleDao(dbConnection);
+		if (this.roleDao == null) {
+			roleDao = new OracleRoleDao(dbConnection);
+		}
+		return roleDao;
 	}
 
 }

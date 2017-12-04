@@ -37,7 +37,7 @@ public class CombinedFilterCriteria implements FilterCriteria {
                 filterCriteriaJson.append(filterCriteria.toJson()).append(" ").append(this.operator.getSerializedValue()).append(" ");
             }
 
-            return filterCriteriaJson.substring(0, filterCriteriaJson.length() - (this.operator.getSerializedValue().length() + 2)) + ")";
+            return filterCriteriaJson.delete(filterCriteriaJson.length() - (this.operator.getSerializedValue().length() + 2), filterCriteriaJson.length()) + ")";
         }
     }
 }

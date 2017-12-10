@@ -20,12 +20,12 @@ public class TrolleybusBuilder extends TransportBuilder {
 	private List<TroleybusWheel> trolleybusWhells;
 	private TrolleybusBody trolleybusBody;
 	private List<TroleybusHeadlight> trolleybusHeadlights;
-	private List<TrolleyRod> trolleybusShtangeq;
+	private List<TrolleyRod> trolleybusRods;
 	
 	 public TrolleybusBuilder() {
 		this.trolleybusWhells = new ArrayList<>();
 		this.trolleybusHeadlights = new ArrayList<>();
-		this.trolleybusShtangeq = new ArrayList<>(2);
+		this.trolleybusRods = new ArrayList<>(2);
 	}
 
 	@Override
@@ -38,12 +38,12 @@ public class TrolleybusBuilder extends TransportBuilder {
 	@Override
 	public Body buildBody() {
 		this.trolleybusBody = new TrolleybusBody();
-		TrolleyRod shtanga1 = new TrolleyRod();
-		TrolleyRod shtanga2 = new TrolleyRod();
-		this.trolleybusShtangeq.add(shtanga1);
-		this.trolleybusShtangeq.add(shtanga2);
-		trolleybusShtangeq.forEach(shtanga->{
-			trolleybusBody.subscribe(shtanga);
+		TrolleyRod rod1 = new TrolleyRod();
+		TrolleyRod rod2 = new TrolleyRod();
+		this.trolleybusRods.add(rod1);
+		this.trolleybusRods.add(rod2);
+		trolleybusRods.forEach(rod->{
+			trolleybusBody.subscribe(rod);
 		});
 		
 		return trolleybusBody;
@@ -65,6 +65,10 @@ public class TrolleybusBuilder extends TransportBuilder {
 	public Transport getTransport() {
 		Trolleybus trolleybus = new Trolleybus();
 		trolleybus.addBody(trolleybusBody);
+	
+		trolleybusRods.forEach(rod->{
+			trolleybus.addRod(rod);
+		});
 	
 		trolleybusHeadlights.forEach(trolleybusHeadlight->{
 			trolleybus.addHeadlight(trolleybusHeadlight);

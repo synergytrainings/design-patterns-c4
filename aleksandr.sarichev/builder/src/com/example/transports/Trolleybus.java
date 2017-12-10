@@ -7,14 +7,14 @@ import com.example.transportparts.trolleybus.*;;
 
 public class Trolleybus extends Transport {
 	
-	private List<TrolleyRod> trolleybusShtangeq;
+	private List<TrolleyRod> trolleyRods;
 	
 	public Trolleybus(){
-		this.trolleybusShtangeq = new ArrayList<>();
+		this.trolleyRods = new ArrayList<>();
 	}
 
-	public void addShtanga(TrolleyRod trolleybusShtanga) {
-		this.trolleybusShtangeq.add(trolleybusShtanga);
+	public void addRod(TrolleyRod trolleyRod) {
+		this.trolleyRods.add(trolleyRod);
 	}
 
 }
